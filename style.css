@@ -1,0 +1,193 @@
+
+body
+{
+    background: linear-gradient(90deg, rgba(253,29,29,1) 0%, rgb(255, 255, 255) 50%, rgba(69,94,252,1) 100%);
+    /* background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
+    /* background: linear-gradient(90deg, rgba(58,180,62,1) 0%, rgba(253,29,29,1) 50%, rgba(69,94,252,1) 100%); */
+}
+
+#pantalla-inicio
+{
+    position: absolute; /* position, top, left y transform...para centrar en valor absoluto (utilizar todo esto junto...no es muy recomendable, porque al cambiar los valores, se puede llegar a desordenar todo de forma caotica) */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    /* margin: 5px; */
+    border-radius: 20px;
+    border-color: black;
+    background-color: yellow;
+    display: block;
+}
+
+#botonEmpezar
+{
+    width: 45%;
+}
+
+#pantalla-juego
+{
+    display: none;
+    /* background-color: yellow; */
+}
+
+.contador, .meter, .bar, .num
+{
+    font-size: 20px;
+    border-color: white;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 20px;
+    background-color: yellow;
+}
+#numero-movimientos
+{
+    font-size: 20px;
+    border-color: white;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 20px;
+    background-color: yellow;
+}
+
+table
+{
+    width: 50%;
+}
+td
+{
+    background-color: gold;
+}
+
+/* .poke-todos
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-content: space-around;
+} */
+
+/* .pokemon
+{
+    box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, .25);
+    text-transform: uppercase;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    justify-content: space-around;
+} */
+
+.colocados
+{
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    /* padding: 20px;
+    margin-top: 20px; */
+}
+.colocados>img
+{
+    opacity: 50%;
+}
+
+.ubicacion-arrastrar
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: gray;
+}
+
+.pokemon-img
+{
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 4px;
+    /* z-index: 1; */
+    /* background: none; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* background-color: orange; */
+}
+
+/* .pokemon-btn
+{
+    
+} */
+
+/* button>img
+{
+    
+} */
+
+input
+{
+    margin-left: 2%;
+    /* padding-bottom: 2%; */
+    width: 95%;
+}
+
+/* .draggable-elements, .droppable-elements
+{
+    border: 2px solid black; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 24px;
+    min-height: 230px;
+} */
+
+/* .wrong
+{
+    text-align: center;
+    font-size: 2em;
+    color: white;
+} */
+
+img
+{
+    margin-left: 5px;
+    width: 9%;
+    background-color: gray;
+    border-radius: 20px;
+    z-index: 0;  /* --> para posicionar los elementos (a modo de capas), por lo que, cuanto mas bajo sea el valor, mas atras se posicionará... */
+}
+
+button
+{
+    border-radius: 0px;
+    text-align: center;
+    width: 10.85%;
+    margin-top: 2px;
+    z-index: 1;
+}
+button:hover
+{
+    border-radius: 7px;
+    background-color: greenyellow;
+}
+
+h1
+{
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+h3
+{
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+p
+{
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
