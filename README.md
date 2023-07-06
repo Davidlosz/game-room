@@ -1,7 +1,7 @@
-Web game
+> Web game
 
 ¡Hola, visitante! ¿Te ha llamado la atención mi juego web? 
-Si es así...te explico qué es lo que tienes que hacer para jugar. 
+Si es así...te dejo por aquí (arriba) todos los archivos y te explico qué es lo que tienes que hacer para jugar. 
 *espero que te guste Pokémon o, al menos, hayas escuchado algo acerca de esta franquicia, porque el juego va de dicha temática...
 
 Lo primero que tienes que hacer es: acceder a la página, desde el siguiente enlace: https://game-room.davidls.es/
