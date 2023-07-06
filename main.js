@@ -31,7 +31,7 @@ window.onload=actualizadorTiempo; //ejecuta antes de todo, por pantalla, una fun
 // }
 
 
-let tiempo=151;
+let tiempo;
 
 function actualizadorTiempo()
 {
@@ -39,13 +39,13 @@ function actualizadorTiempo()
         
     if(tiempo==-1) //si el tiempo se acaba...
     {
-        document.innerHTML="Se acabó el tiempo"; //mostramos el mensaje
+        // alert("Se acabó el tiempo"); //mostramos un pop-up
         tiempoAcabado(); //y cargamos la funcion 
     }
     else //en caso de que el tiempo no se haya acabado aún...
     {
         tiempo--; //va disminuyendo...
-        setTimeout("actualizadorTiempo()", 1000); //contador matematico (1000 equivale a 10 segundos)
+        setTimeout("actualizadorTiempo()", 2000); //contador matematico (1000 equivale a 10 segundos)
     }
 }
 
@@ -65,9 +65,9 @@ function juegoIniciado() //funcion que se iniciará al pulsar el boton empezar (
 {
     document.getElementById("pantalla-inicio").style.display="none"; //ocultamos la pantalla de inicio, aplicando/modificando la propiedad "display" a "none" desde el style (css) 
     document.getElementById("pantalla-juego").style.display="block"; //cargamos la pantalla de juego, aplicando/modificando la propiedad "display" a "block" desde el style (css)
-    audio1.pause();
+    // audio1.pause();
     // audio2.play();
-    tiempo=151; //reiniciamos el contador, para que, en caso de que se vaya reduciendo el tiempo, antes de iniciar el juego, vuelva a 151
+    tiempo=151; //mantenemos el tiempo y lo reiniciamos, en caso de que se esté rejugando...
     actualizadorTiempo();
     //tiempo.preventDefault();
 }
@@ -75,6 +75,9 @@ function juegoIniciado() //funcion que se iniciará al pulsar el boton empezar (
 function tiempoAcabado() //funcion que se iniciará al acabarse el tiempo
 {
     document.getElementById("pantalla-juego").style.display="none";
+    window.alert("Se acabó el tiempo"); //mostramos un pop-up
+    // window.prompt("PUES..."); //mostramos un pop-up que permite introducir datos
+    // window.confirm("OK");  //mostramos un pop-up que permite aceptar datos
     document.getElementById("pantalla-inicio").style.display="block";
     // audio2.pause();
     // audio1.play();
@@ -116,8 +119,8 @@ let URL="https://pokeapi.co/api/v2/pokemon/?limit=151&offset=1";  //cargamos la 
 
 function mostrarPokes(poke)
 {   
-    // for(let i=1; i<=151; i++)   // bucle sin usar: no carga (aunque debiera...), por orden numerico, cada posicion de la pokedex
-	// { 
+    for(let i=1; i<=151; i++)   // bucle sin usar: no carga (aunque debiera...), por orden numerico, cada posicion de la pokedex
+	{ 
         // console.log(poke);
         // let spritePokemon=poke.sprites[i];
 
@@ -125,11 +128,11 @@ function mostrarPokes(poke)
         // const boton=document.querySelector('#listaPokes');
         // const boton=document.getElementById("#listaPokes");
 
-		boton.classList.add("pokemon-img"); 
+		boton.classList.add("pokemon-btn"); 
         // boton.className("pokemon-btn"); 
 		boton.innerHTML=
 		`  
-		    <img class="pokemon-img" draggable="true" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" src="${poke.sprites.other['official-artwork'].front_default}" alt="${poke.name}">
+		    <img id="${i}" draggable="true" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" src="${"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+i+".png"}" alt="${poke.name}">
         `; 
         // button
         // src="${poke.sprites.other['official-artwork'].front_default}" alt="${poke.name}"
@@ -139,7 +142,7 @@ function mostrarPokes(poke)
         
 		listaPokes.append(boton);
         console.log(boton);
-    // }
+    }
 }
 
 
@@ -178,7 +181,7 @@ function onDragOver(event) //cuando se mantiene el elemento sobre algo
     let elemArrastrable = event.dataTransfer.getData("Data"); //elemento arrastrado
     let id = event.target.id; //elemento sobre el que se arrastra
     
-    if (id == 'listaPokes')
+    if (id == 'ubicacion-arrastrar')
     {
         return false; //para que se pueda soltar el elemento en el destino indicado
     }
@@ -202,53 +205,53 @@ function onDrop(event) //al soltar el elemento arrastrado
 
     // event.preventDefault(); //poner esto aqui, hace que al arrastrar un elemento a la zona de colocacion, no salga como enlace
 
-    let pokeImg = event.dataTransfer.getData("Data"); 
-    event.target.appendChild(document.getElementById(pokemon-img)); //coloca el elemento sobre el otro indicado
-
+    // let pokeImg = event.dataTransfer.getData("Data"); 
+    event.target.appendChild(document.getElementById(pokemon-btn)); //coloca el elemento sobre el otro indicado
+    
     // event.target.style.border = '';
     
     //dimensiones del elemento sobre el que se arrastra
-    tamContX = document.querySelector('#'+event.target.id).width();
-    tamContY = document.querySelector('#'+event.target.id).height();
+    // tamContX = document.querySelector('#'+event.target.id).width();
+    // tamContY = document.querySelector('#'+event.target.id).height();
 
     //dimensiones del elemento arrastrado
-    tamElemX = document.querySelector('#'+pokemon-img).width();
-    tamElemY = document.querySelector('#'+pokemon-img).height();
+    // tamElemX = document.querySelector('#'+pokemon-btn).width();
+    // tamElemY = document.querySelector('#'+pokemon-btn).height();
   
     //posicion del elemento sobre el que se arrastra
-    posXCont = document.querySelector('#'+event.target.id).position().left;
-    posYCont = document.querySelector('#'+event.target.id).position().top;
+    // posXCont = document.querySelector('#'+event.target.id).position().left;
+    // posYCont = document.querySelector('#'+event.target.id).position().top;
 
     //posicion absoluta del raton
-    x = event.layerX;
-    y = event.layerY;
+    // x = event.layerX;
+    // y = event.layerY;
 
     //si parte del elemento movido se queda fuera del sitio a arrastrar, cambian las coordenadas al origen, para que no se cambie de lugar
-    if (posXCont + tamContX <= x + tamElemX)
-    {
-        x = posXCont + tamContX - tamElemX;
-    }
+    // if (posXCont + tamContX <= x + tamElemX)
+    // {
+    //     x = posXCont + tamContX - tamElemX;
+    // }
 
-    if (posYCont + tamContY <= y + tamElemY)
-    {
-        y = posYCont + tamContY - tamElemY;
-    }
+    // if (posYCont + tamContY <= y + tamElemY)
+    // {
+    //     y = posYCont + tamContY - tamElemY;
+    // }
 
-    document.getElementById(pokemon-img).style.position = "absolute";
-    document.getElementById(pokemon-img).style.left = x + "px";
-    document.getElementById(pokemon-img).style.top = y + "px";
+    // document.getElementById(pokemon-btn).style.position = "absolute";
+    // document.getElementById(pokemon-btn).style.left = x + "px";
+    // document.getElementById(pokemon-btn).style.top = y + "px";
 }
 
 function onDragEnd(event) //al finalizar el arrastre
 {
-    console.log("dragend-en el nuevo destino");
+    console.log("dragend-colocado en el nuevo destino");
     // event.target.style.opacity = ''; //restaura la opacidad del elemento, cuando el elemento se cambie lugar
     // event.target.style.opacity = '0.5'; //cuando el elemento se cambie lugar, se reducirá la opacidad para ver que efectivamente ha cambiado de sitio
     // event.target.style.width="50%"; 
     // event.target.style.backgroundColor = 'yellow'; 
     event.target.style.display="none";
 
-    // INTENTO DE MOSTRAR IMAGEN, EN VEZ DE EL ENLACE, EN EL INPUT
+    // INTENTO DE MOSTRAR IMAGEN, EN VEZ DE EL ENLACE
     // event.target.createElement('img');  //No funciona
     event.dataTransfer.clearData("Data");
 }

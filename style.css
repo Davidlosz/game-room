@@ -8,15 +8,15 @@ body
 
 #pantalla-inicio
 {
+    width: 410px;
     position: absolute; /* position, top, left y transform...para centrar en valor absoluto (utilizar todo esto junto...no es muy recomendable, porque al cambiar los valores, se puede llegar a desordenar todo de forma caotica) */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     text-align: center;
-    /* margin: 5px; */
+    border: black solid;
     border-radius: 20px;
-    border-color: black;
     background-color: yellow;
     display: block;
 }
@@ -24,6 +24,8 @@ body
 #botonEmpezar
 {
     width: 45%;
+    text-align: center;
+    font-size: 15px;
 }
 
 #pantalla-juego
@@ -32,33 +34,37 @@ body
     /* background-color: yellow; */
 }
 
-.contador, .meter, .bar, .num
+.caja-musica
 {
-    font-size: 20px;
-    border-color: white;
-    margin-left: 35%;
-    margin-right: 35%;
-    border-radius: 20px;
-    background-color: yellow;
-}
-#numero-movimientos
-{
-    font-size: 20px;
-    border-color: white;
-    margin-left: 35%;
-    margin-right: 35%;
-    border-radius: 20px;
-    background-color: yellow;
+    /* background-color: blue; */
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    padding-top: 4px;
+    width: 66%;
 }
 
-table
+.contador
 {
-    width: 50%;
+    font-size: 20px;
+    margin: auto;
+    /* margin-left: 35%;
+    margin-right: 35%; */
+    max-width: 150px;
+    border: black solid;
+    border-radius: 20px;
+    background-color: yellow;
 }
-td
+/* #numero-movimientos
 {
-    background-color: gold;
-}
+    font-size: 20px;
+    border-color: white;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 20px;
+    background-color: yellow;
+} */
+
 
 /* .poke-todos
 {
@@ -101,9 +107,9 @@ td
     background-color: gray;
 }
 
-.pokemon-img
+.pokemon-btn
 {
-    width: 100%;
+    width: 10.85%;
     margin-left: 0px;
     margin-top: 4px;
     /* z-index: 1; */
@@ -118,10 +124,12 @@ td
     
 } */
 
-/* button>img
+button>img
 {
-    
-} */
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 4px;
+}
 
 input
 {
@@ -162,7 +170,6 @@ button
     border-radius: 0px;
     text-align: center;
     width: 10.85%;
-    margin-top: 2px;
     z-index: 1;
 }
 button:hover
