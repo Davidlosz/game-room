@@ -4,7 +4,7 @@ Web game
 Si es así...te explico qué es lo que tienes que hacer para jugar. 
 *espero que te guste Pokémon o, al menos, hayas escuchado algo acerca de esta franquicia, porque el juego va de dicha temática...
 
-Lo primero que tienes que hacer es: acceder a la página, desde el siguiente enlace: https://etc...
+Lo primero que tienes que hacer es: acceder a la página, desde el siguiente enlace: https://game-room.davidls.es/
 Una vez estés dentro, verás (nada más empezar...) una pantalla de inicio (ambientada por una música de fondo), en donde te toparás con un mensaje de bienvenida y el tan esperado "botón Jugar". Cuando pulses dicho botón, aparecerá la pantalla principal, en donde empezarás a jugar inmediatamente, puesto que un contador numérico de 151 segundos comenzará a reducirse.
   *consejo: sé rápido/a; puesto que, cuando el contador llegue a 0...se acabará la partida. 
 Bien...si quieres completar el reto, dentro del tiempo...lo único que tienes que hacer es: arrastrar los botones/las imágenes (uno/a a uno/a) a una sección blanca que verás (la identificarás rápido, por las imágenes de ejemplo que te he dejado, a modo de guía...).
