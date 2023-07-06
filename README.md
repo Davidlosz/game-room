@@ -1,4 +1,4 @@
-Game web
+Web game
 
 ¡Hola, visitante! ¿Te ha llamado la atención mi juego web? 
 Si es así...te explico qué es lo que tienes que hacer para jugar. 
